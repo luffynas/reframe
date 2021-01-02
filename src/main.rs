@@ -99,6 +99,13 @@ fn main() {
         PathBuf::from(&source)
     };
 
+    let path_out = &args[2];
+    let source_out = if Path::new(&path_out).exists() {
+        PathBuf::from(&path_out)
+    } else {
+        PathBuf::from(".")
+    };
+
     let mut rl = Editor::<()>::new();
 
     let history_path = env::temp_dir().join(".reframe~");
@@ -115,7 +122,7 @@ fn main() {
         }
     };
 
-    match rf.generate(".") {
+    match rf.generate(source_out) {
         Ok(out_name) => {
             println!();
             println!("  ✨ project generated at `{}`", out_name);

@@ -997,7 +997,7 @@ dependencies = [
 
 [[package]]
 name = "reframe"
-version = "0.3.2"
+version = "0.3.3"
 dependencies = [
  "chrono 0.4.9 (registry+https://github.com/rust-lang/crates.io-index)",
  "colored 1.7.0 (registry+https://github.com/rust-lang/crates.io-index)",
